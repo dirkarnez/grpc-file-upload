@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package uploadfile;
+
+// The request message containing the user's name.
+message Request {
+    string userName = 1;
+    bytes file = 29;
+}
+
+// The response message containing the greetings
+message Response {
+    bool isSuccessful = 1;
+}
+
+service UploadFileService {
+    rpc UploadFile(Request) returns (Response);
+}
